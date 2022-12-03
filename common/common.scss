@@ -24,7 +24,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: bold;
+  &,
+  &:not(.text-logo) {
+    font-weight: bold;
+  }
 }
 
 .topic-body {
@@ -503,7 +506,9 @@ img.avatar {
 
 .discourse-no-touch {
   *:not(.d-editor-button-bar):not(.toolbar-popup-menu-options)
-    > .btn:not(.user-menu-tab):not(.d-editor-button-bar):not(.profile-tab-btn):not(.sidebar-section-header) {
+    > .btn:not(.user-menu-tab):not(.d-editor-button-bar):not(
+      .profile-tab-btn
+    ):not(.sidebar-section-header) {
     background: var(--secondary);
     border: var(--default-border);
     border-radius: 0.25em;
