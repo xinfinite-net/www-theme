@@ -1,7 +1,7 @@
 {
   "name": "craigslist theme",
   "component": false,
-  "components": ["https://github.com/discourse/discourse-header-search"],
+  "components": ["https://github.com/discourse/discourse-header-search.git"],
   "license_url": null,
   "about_url": null,
   "theme_version": 0.1,
