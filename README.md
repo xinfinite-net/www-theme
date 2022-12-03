@@ -1,4 +1,4 @@
-# craigslist theme
+# www theme
 
 featuring craigslist iconic brutalist web aesthetics
 
