@@ -4,15 +4,13 @@ export default {
   name: "custom-homepage",
   initialize() {
     withPluginApi("0.8.7", (api) => {
-      if (document.getElementById("latest-topics-bar") !== null) {
-        fetch("/latest.json")
-          .then((response) => response.json())
-          .then((data) => {
-            console.log(data)
-            updateLatest(data)
-          })
-          .catch((error) => console.log(error))
-      }
+      fetch("/latest.json")
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data)
+          updateLatest(data)
+        })
+        .catch((error) => console.log(error))
       function updateLatest(data) {
         const list = document.getElementById("latest-topics-bar")
         const topics = data.topic_list.topics
