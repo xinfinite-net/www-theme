@@ -4,14 +4,15 @@ export default {
   name: "custom-homepage",
   initialize() {
     withPluginApi("0.8.7", (api) => {
-      fetch("/latest.json")
-        .then((response) => response.json())
-        .then((data) => {
-          console.log(data)
-          updateLatest(data)
-        })
-        .catch((error) => console.log(error))
-
+      if (document.getElementById("latest-topics-bar") !== null) {
+        fetch("/latest.json")
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data)
+            updateLatest(data)
+          })
+          .catch((error) => console.log(error))
+      }
       function updateLatest(data) {
         const list = document.getElementById("latest-topics-bar")
         const topics = data.topic_list.topics
@@ -41,26 +42,6 @@ export default {
         div.appendChild(ul2)
         list.appendChild(div)
       }
-      api.registerConnectorClass("below-site-header", "custom-homepage", {
-        setupComponent(args, component) {
-          var topMenuRoutes = component.siteSettings.top_menu
-            .split("|")
-            .map(function (route) {
-              return "/" + route
-            })
-          var homeRoute = topMenuRoutes[0]
-
-          api.onPageChange((url) => {
-            if (url === "/" || url === homeRoute) {
-              document.querySelector("html").classList.add("custom-homepage")
-              component.set("displayCustomHomepage", true)
-            } else {
-              document.querySelector("html").classList.remove("custom-homepage")
-              component.set("displayCustomHomepage", false)
-            }
-          })
-        },
-      })
     })
   },
 }
