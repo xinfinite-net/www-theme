@@ -1,6 +1,6 @@
 # www theme
 
-featuring craigslist iconic brutalist web aesthetics
+featuring brutalist web aesthetics inspired by craigslist and wikipedia
 
 ---
 
