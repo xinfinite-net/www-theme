@@ -580,13 +580,13 @@ img.avatar {
   border-bottom: 1px solid var(--primary-200);
 }
 
-.responsive-iframe {
+div[data-theme-container] {
   position: relative;
   padding-bottom: 75%;
   height: 0;
   overflow: hidden;
 }
-.responsive-iframe iframe {
+div[data-theme-container] iframe {
   position: absolute;
   top:0;
   left: 0;
